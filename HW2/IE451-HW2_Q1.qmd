@@ -1,0 +1,150 @@
+---
+title: "IE451-HW2_Q1"
+format: html
+editor: visual
+author: Necati Furkan Çolak
+date: "04 03 2023"
+output: html_document
+---
+
+## HW2_Question.1 (Exercise 9) :
+
+```{r}
+knitr::opts_chunk$set(echo = TRUE)
+library(ISLR); library(tidyverse); 
+library(GGally); library(ggthemes); 
+library(knitr); library(kableExtra)
+df <- Auto
+```
+
+In first, I want to see data in general patterns.
+
+```{r}
+df %>% head()
+```
+
+In this part, I omit null values.
+
+```{r}
+df = na.omit(df)
+```
+
+**a) Which of the predictors are quantitative, and which are qualitative?**
+
+In this question, we should definitely know what is qualitative data and what is quantitative data.
+
+-   The meaning of qualitative data is information that is descriptive and categorical in nature, often consisting of non-numerical data. It is used to describe characteristics and qualities of a particular group or population. Qualitative data can be divided into nominal data and ordinal data.
+
+-   On the other hand, meaning of the quantitative data is numerical data that can be measured or counted. It is used to quantify and measure things, often consisting of numerical data. Quantitative data can be divided into discrete data and continuous data.
+
+```{r}
+str(df)
+```
+
+In the given pattern above, it can be seen that;
+
+Name \<- Qualitative
+
+mpg, cylinders, displacement, horsepower, weight, acceleration, year \<- Quantitative
+
+In here, I couldn't be sure from the origin so, I want to check its unique values across all dataset.
+
+```{r}
+unique_values <- unique(df$origin)
+print(unique_values)
+```
+
+With observation, I think unique also a categorical predictor since it takes only 3 unique values across all data set. Label encoding can be applied in here. Because of that situation, I also add origin into qualitative part.
+
+My Final Result:
+
+Name, Origin \<- Qualitative
+
+mpg, cylinders, displacement, horsepower, weight, acceleration, year \<- Quantitative
+
+**b)** **What is the range of each quantitative predictor? You can answer this using the range( ) function.**
+
+The results for each predictors' range can be seen below.
+
+```{r}
+apply(df[,1:6], 2, range)
+```
+
+**c) What is the mean and standard deviation of each quantitative predictor?**
+
+In below, mean for each quantitative predictor can be seen.
+
+```{r}
+apply(df[,1:7], 2, mean)
+```
+
+In below, standard deviation for each quantitative predictor can be seen.
+
+```{r}
+apply(df[,1:7], 2, sd)
+```
+
+**d) Now remove the 10th through 85th observations. What is the range, mean, and standard deviation of each predictor in the subset of the data that remains?**
+
+Removal of observations from 10 to 85.
+
+```{r}
+apply(df[-c(10:85),1:6], 2, range)
+```
+
+Mean calculation with new dataset:
+
+```{r}
+apply(Auto[-c(10:85),1:6], 2, mean)
+```
+
+Standard deviation calculation with new dataset:
+
+```{r}
+apply(Auto[-c(10:85),1:6], 2, sd)
+```
+
+**e) Using the full data set, investigate the predictors graphically, using scatterplots and other tools of your choice. Create some plots (at least 3) highlighting the relationships among the predictors. Comment on your findings.**
+
+We apply some changes on previous dataset which is "df". Since the question asks to use full data, I reload data again under new title which is "df_new".
+
+```{r}
+df_new <- Auto
+df_new = na.omit(df_new)
+pairs(df_new[,])
+```
+
+```{r}
+myplot_3 <- ggplot(data = df_new, aes(x = displacement, y = acceleration))
+myplot_3 <- myplot_3 + geom_point()
+myplot_3 <- myplot_3 + geom_point(size = 3, color = "blue") + ggtitle("Comparison 1")
+print(myplot_3)
+```
+
+In the graph above, it can be seen that there is a slightly linear relation with displacement and acceleration. As displacement increase, the acceleration rate decrease.
+
+```{r}
+my_plot2 <- ggplot(data = df_new, aes(x = horsepower, y = mpg))
+my_plot2 <- my_plot2 + geom_point()
+my_plot2 <- my_plot2 + geom_point(size = 3, color = "green") + ggtitle("Comparison 2")
+print(my_plot2)
+```
+
+In the graph above, there is a direct relationship between mpg and horsepower. As horsepower increase, the mpg decreases.
+
+```{r}
+my_plot1 <- ggplot(data = df_new, aes(x = mpg, y = acceleration))
+my_plot1 <- my_plot1 + geom_point()
+my_plot1 <- my_plot1 + geom_point(size = 3, color = "red") + ggtitle("Comparison 3")
+print(my_plot1)
+```
+
+In the graph above, we do not see such direct relationship in graph 2. However it can be said that as mpg increase acceleration increases in general pattern.
+
+f\) **Suppose that we wish to predict gas mileage (mpg) on the basis of the other variables. Do your plots suggest that any of the other variables might be usefol in predicting mpg? Justify your answer.**
+
+Based on the plots, it appears that there is a strong correlation between mpg and other variables, especially displacement, horsepower, and weight. We would expect that heavier and more powerful cars would have lower mpg. The number of cylinders seems to be a useful categorical variable for the model, as we observed distinct variations in the mpg variable in the boxplot. To obtain a more detailed view, we can divide the pairs plot by cylinders.
+
+```{r}
+pairs(df_new[,])
+```
