@@ -1,0 +1,144 @@
+---
+title: "IE451_HW3_Q1"
+format: html
+editor: visual
+author: Necati Furkan Çolak
+date: 03/27/2023
+output: html_document
+---
+
+## Imports:
+
+```{r}
+library(ISLR2)
+library(ggplot2)
+```
+
+## **Data Import and Preprocess:**
+
+In this chapter, we store data under the name of df. Also, with head and summary functions we try to see the general view of data.
+
+```{r}
+df <- Auto
+summary(df)
+```
+
+## ISLR Chapter 3, Question 9:
+
+**a)** **Produce a scatter plot matrix which includes all of the variables in the data set.**
+
+```{r}
+pairs(df)
+```
+
+**b) Compute the matrix of correlations between the variables using the function cor(). You will need to exclude the name variable, which is qualitative.**
+
+**Explanation:**
+
+In this question, we should definitely know what is qualitative data and what is quantitative data.
+
+-   The meaning of qualitative data is information that is descriptive and categorical in nature, often consisting of non-numerical data. It is used to describe characteristics and qualities of a particular group or population. Qualitative data can be divided into nominal data and ordinal data.
+
+-   On the other hand, meaning of the quantitative data is numerical data that can be measured or counted. It is used to quantify and measure things, often consisting of numerical data. Quantitative data can be divided into discrete data and continuous data.
+
+To find the quantitative columns in the data, we need to look at the general view of the data. First five rows of the dataset are described below.
+
+```{r}
+head(df)
+```
+
+When we look at the data, it's seen that all columns are quantitative except name column. Then, we need to remove this column to generate a correlation matrix.
+
+The reason why we remove the "name" is corr function does not work with the qualitative data since it's not categorical data. Since the car names and models has large amount of variety there is no way to categorize name column with that name storage type.
+
+```{r}
+cor(subset(Auto, select = -name))
+```
+
+In the matrix above, we examine the correlations of all variables with origin column. In that case, it can be said that although mpg has the best positive correlation coefficient with the origin column which is 0.5652088, the displacement has the best negative correlation coefficient with the origin column which is -0.6145351. Then, we can say that both two variables can be helpful the explain origin column most however this situation does not show any causality.
+
+**c) Use the lm() function to perform a multiple linear regression with mpg as the response and all other variables except name as the predictors. Use the summary() function to print the results. Comment on the output.**
+
+```{r}
+df.mlr = lm(mpg ~ . -name, data=df)
+summary(df.mlr)
+```
+
+Let we comment on the results,
+
+In that linear regression model, we use all variables to construct our linear model except name in the dataset since it's not quantitative as we said before.
+
+Based on the information provided, it seems like you are discussing a statistical model where the response variable is MPG and the predictors are displacement, weight, year, and origin. You have determined that all of these predictors have a statistically significant relationship with the response variable, as indicated by their p-values being below the threshold of 0.05.
+
+Furthermore, you have noted that the coefficient for the predictor year is 0.7507. This coefficient represents the relationship between the predictor year and the response variable MPG, while holding all other predictors constant. Specifically, this coefficient suggests that for every 3 years increase in the year of the car, the MPG increases by about 4 units.
+
+It's important to keep in mind that the interpretation of the coefficients can be affected by the scale of the variables and the presence of interactions among the predictors. Additionally, while a p-value below 0.05 is often used as a threshold for statistical significance, it's not a definitive rule and should be interpreted with caution.
+
+Overall, it seems like you have a statistically significant model with some interesting findings about the relationship between the predictors and the response variable. However, further analysis and interpretation may be necessary to fully understand the implications of these results.ü
+
+**d) Use the plot() function to produce diagnostic plots of the linear regression fit. Comment on any problems you see with the fit. Do the residual plots suggest any unusually large outliers ? Does the leverage plot identify any observations with unusually high leverage?**
+
+```{r}
+plot(df.mlr)
+```
+
+I want to comment all these 4 plots.
+
+-   **Residuals vs Fitted Plot:**
+
+    In the graph Residuals vs Fitted Plot, it appears that there is evidence of non-linearity and non-constant variance in the data. The U-shape pattern in the residuals suggests that a linear model may not adequately capture the relationship between the variables, and that a more complex model with non-linear terms may be necessary. The funnel shape in the residual plot indicates that the spread of the residuals is not constant across the range of the predictor variable, which violates the assumption of homoscedasticity. This can lead to biased parameter estimates and unreliable inference. One approach to addressing these issues would be to consider fitting a nonlinear model or using transformations of the predictor variable to account for the non-linearity and heteroscedasticity.
+
+-   **Normal Q-Q:**
+
+    In the graph Normal Q-Q, it appears that the normality assumption for the residuals may be violated, as evidenced by the observations that do not lie on the dashed line in the normal Q-Q plot. This could potentially indicate that the residuals are not normally distributed, which can lead to biased parameter estimates and incorrect inference. It may be helpful to further investigate the nature of the departures from normality, for example by examining other diagnostic plots or conducting formal tests of normality. If significant departures from normality are detected, it may be necessary to consider alternative modeling approaches or to use methods that are robust to departures from normality.
+
+-   **Scale - Location:**
+
+    It appears that the scale-location plot does not show any outliers because all the standardized residuals are within the range of \[0,2\].
+
+**Residuals vs Leverage:**
+
+-   It appears that the residuals vs. leverage plot does not show any observations with high leverage points, as none of the points are above the Cook's distance line. However, it is important to note that the absence of high leverage points does not necessarily mean that the model is free of influential observations or that it is a good fit for the data. It is important to examine other diagnostic plots and statistical measures to assess the overall adequacy of the model, including the goodness of fit, the presence of outliers or influential observations, and the normality and homoscedasticity of the residuals. If issues are detected, it may be necessary to consider alternative modeling approaches or data transformations to address them.
+
+**(e) Use the \* and : symbols to fit linear regression models with interaction effects. Do any interactions appear to be statistically significant?**
+
+```{r}
+lm.df2 <- lm(mpg ~ cylinders*displacement + horsepower*weight + acceleration *year + cylinders*origin ,data=df)
+summary(lm.df2 )
+```
+
+The interactions that are statistically significant are `horsepower*weight` *and* `acceleration * year` with a p value less than 0.5. (FOR THE "\*" PART).
+
+```{r}
+lm.df3 <- lm(mpg ~ cylinders*displacement + horsepower:weight + acceleration :year + cylinders:origin ,data=df)
+summary(lm.df3 )
+```
+
+The interactions that are statistically significant are horsepower:weight and acceleration:year and cylinders:origin with a p value less than 0.5. (FOR THE ":" PART).
+
+**Why we get different results?**
+
+The **`*`** symbol indicates that the interaction term between two predictors should include both main effects as well as the interaction effect. For example, in the formula **`y ~ x1 * x2`**, R will include the terms **`x1`**, **`x2`**, and **`x1:x2`** in the linear regression model. This means that the model will estimate the effect of **`x1`** on **`y`**, the effect of **`x2`** on **`y`**, and the effect of the interaction between **`x1`** and **`x2`** on **`y`**.
+
+The **`:`** symbol indicates that the interaction term between two predictors should only include the interaction effect, without the main effects. For example, in the formula **`y ~ x1 : x2`**, R will only include the term **`x1:x2`** in the linear regression model, but not the individual terms **`x1`** and **`x2`**. This means that the model will only estimate the effect of the interaction between **`x1`** and **`x2`** on **`y`**, but not the separate effects of **`x1`** and **`x2`** on **`y`**.
+
+In summary, the difference between **`*`** and **`:`** as an interaction term in R is that **`*`** includes both main effects and interaction effect, while **`:`** includes only the interaction effect.
+
+**f)** **Try a few different transformations of the variables, such as log(X), √X, X2. Comment on your findings.**
+
+**TRANSFORMATION-1:**
+
+```{r}
+lm.fit4 <- lm(mpg ~ horsepower + I(horsepower^2), data=df)
+summary(lm.fit4)
+```
+
+-   Examining the Residuals vs Leverage plot before, we did not identify any observations that have a high leverage point and could potentially affect the regression model. Additionally, the Residuals vs Fitted plot indicates that the residuals appear to follow a roughly linear pattern, without any obvious nonlinearities or other issues that might indicate a problem with the model fit.
+
+**TRANSFORMATION-2:**
+
+```{r}
+summary(lm(mpg ~ . -name + log(acceleration), data=df))
+```
+
+-   If we look at our first model in c), we can say that applying log transformation on acceleration makes this variable more significant since the when ve apply log transformation on acceleration we observe significant p-value drop from 0.4158 to 7.82e-06. Since the transformed p value is less than 0.05, it makes acceleration statistically significant unlike the model in c).

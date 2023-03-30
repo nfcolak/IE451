@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.1.189">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Necati Furkan Çolak">
+<meta name="dcterms.date" content="2023-03-27">
+
+<title>IE451_HW3_Q1</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="IE451_HW3_Q1_files/libs/clipboard/clipboard.min.js"></script>
+<script src="IE451_HW3_Q1_files/libs/quarto-html/quarto.js"></script>
+<script src="IE451_HW3_Q1_files/libs/quarto-html/popper.min.js"></script>
+<script src="IE451_HW3_Q1_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="IE451_HW3_Q1_files/libs/quarto-html/anchor.min.js"></script>
+<link href="IE451_HW3_Q1_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="IE451_HW3_Q1_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="IE451_HW3_Q1_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="IE451_HW3_Q1_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="IE451_HW3_Q1_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">IE451_HW3_Q1</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Necati Furkan Çolak </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">March 27, 2023</p>
+    </div>
+  </div>
+    
+  </div>
+  
+
+</header>
+
+<section id="imports" class="level2">
+<h2 class="anchored" data-anchor-id="imports">Imports:</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ISLR2)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="data-import-and-preprocess" class="level2">
+<h2 class="anchored" data-anchor-id="data-import-and-preprocess"><strong>Data Import and Preprocess:</strong></h2>
+<p>In this chapter, we store data under the name of df. Also, with head and summary functions we try to see the general view of data.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> Auto</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>      mpg          cylinders      displacement     horsepower        weight    
+ Min.   : 9.00   Min.   :3.000   Min.   : 68.0   Min.   : 46.0   Min.   :1613  
+ 1st Qu.:17.00   1st Qu.:4.000   1st Qu.:105.0   1st Qu.: 75.0   1st Qu.:2225  
+ Median :22.75   Median :4.000   Median :151.0   Median : 93.5   Median :2804  
+ Mean   :23.45   Mean   :5.472   Mean   :194.4   Mean   :104.5   Mean   :2978  
+ 3rd Qu.:29.00   3rd Qu.:8.000   3rd Qu.:275.8   3rd Qu.:126.0   3rd Qu.:3615  
+ Max.   :46.60   Max.   :8.000   Max.   :455.0   Max.   :230.0   Max.   :5140  
+                                                                               
+  acceleration        year           origin                      name    
+ Min.   : 8.00   Min.   :70.00   Min.   :1.000   amc matador       :  5  
+ 1st Qu.:13.78   1st Qu.:73.00   1st Qu.:1.000   ford pinto        :  5  
+ Median :15.50   Median :76.00   Median :1.000   toyota corolla    :  5  
+ Mean   :15.54   Mean   :75.98   Mean   :1.577   amc gremlin       :  4  
+ 3rd Qu.:17.02   3rd Qu.:79.00   3rd Qu.:2.000   amc hornet        :  4  
+ Max.   :24.80   Max.   :82.00   Max.   :3.000   chevrolet chevette:  4  
+                                                 (Other)           :365  </code></pre>
+</div>
+</div>
+</section>
+<section id="islr-chapter-3-question-9" class="level2">
+<h2 class="anchored" data-anchor-id="islr-chapter-3-question-9">ISLR Chapter 3, Question 9:</h2>
+<p><strong>a)</strong> <strong>Produce a scatter plot matrix which includes all of the variables in the data set.</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pairs</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="IE451_HW3_Q1_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p><strong>b) Compute the matrix of correlations between the variables using the function cor(). You will need to exclude the name variable, which is qualitative.</strong></p>
+<p><strong>Explanation:</strong></p>
+<p>In this question, we should definitely know what is qualitative data and what is quantitative data.</p>
+<ul>
+<li><p>The meaning of qualitative data is information that is descriptive and categorical in nature, often consisting of non-numerical data. It is used to describe characteristics and qualities of a particular group or population. Qualitative data can be divided into nominal data and ordinal data.</p></li>
+<li><p>On the other hand, meaning of the quantitative data is numerical data that can be measured or counted. It is used to quantify and measure things, often consisting of numerical data. Quantitative data can be divided into discrete data and continuous data.</p></li>
+</ul>
+<p>To find the quantitative columns in the data, we need to look at the general view of the data. First five rows of the dataset are described below.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  mpg cylinders displacement horsepower weight acceleration year origin
+1  18         8          307        130   3504         12.0   70      1
+2  15         8          350        165   3693         11.5   70      1
+3  18         8          318        150   3436         11.0   70      1
+4  16         8          304        150   3433         12.0   70      1
+5  17         8          302        140   3449         10.5   70      1
+6  15         8          429        198   4341         10.0   70      1
+                       name
+1 chevrolet chevelle malibu
+2         buick skylark 320
+3        plymouth satellite
+4             amc rebel sst
+5               ford torino
+6          ford galaxie 500</code></pre>
+</div>
+</div>
+<p>When we look at the data, it’s seen that all columns are quantitative except name column. Then, we need to remove this column to generate a correlation matrix.</p>
+<p>The reason why we remove the “name” is corr function does not work with the qualitative data since it’s not categorical data. Since the car names and models has large amount of variety there is no way to categorize name column with that name storage type.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(<span class="fu">subset</span>(Auto, <span class="at">select =</span> <span class="sc">-</span>name))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                    mpg  cylinders displacement horsepower     weight
+mpg           1.0000000 -0.7776175   -0.8051269 -0.7784268 -0.8322442
+cylinders    -0.7776175  1.0000000    0.9508233  0.8429834  0.8975273
+displacement -0.8051269  0.9508233    1.0000000  0.8972570  0.9329944
+horsepower   -0.7784268  0.8429834    0.8972570  1.0000000  0.8645377
+weight       -0.8322442  0.8975273    0.9329944  0.8645377  1.0000000
+acceleration  0.4233285 -0.5046834   -0.5438005 -0.6891955 -0.4168392
+year          0.5805410 -0.3456474   -0.3698552 -0.4163615 -0.3091199
+origin        0.5652088 -0.5689316   -0.6145351 -0.4551715 -0.5850054
+             acceleration       year     origin
+mpg             0.4233285  0.5805410  0.5652088
+cylinders      -0.5046834 -0.3456474 -0.5689316
+displacement   -0.5438005 -0.3698552 -0.6145351
+horsepower     -0.6891955 -0.4163615 -0.4551715
+weight         -0.4168392 -0.3091199 -0.5850054
+acceleration    1.0000000  0.2903161  0.2127458
+year            0.2903161  1.0000000  0.1815277
+origin          0.2127458  0.1815277  1.0000000</code></pre>
+</div>
+</div>
+<p>In the matrix above, we examine the correlations of all variables with origin column. In that case, it can be said that although mpg has the best positive correlation coefficient with the origin column which is 0.5652088, the displacement has the best negative correlation coefficient with the origin column which is -0.6145351. Then, we can say that both two variables can be helpful the explain origin column most however this situation does not show any causality.</p>
+<p><strong>c) Use the lm() function to perform a multiple linear regression with mpg as the response and all other variables except name as the predictors. Use the summary() function to print the results. Comment on the output.</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>df.mlr <span class="ot">=</span> <span class="fu">lm</span>(mpg <span class="sc">~</span> . <span class="sc">-</span>name, <span class="at">data=</span>df)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(df.mlr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = mpg ~ . - name, data = df)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-9.5903 -2.1565 -0.1169  1.8690 13.0604 
+
+Coefficients:
+               Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)  -17.218435   4.644294  -3.707  0.00024 ***
+cylinders     -0.493376   0.323282  -1.526  0.12780    
+displacement   0.019896   0.007515   2.647  0.00844 ** 
+horsepower    -0.016951   0.013787  -1.230  0.21963    
+weight        -0.006474   0.000652  -9.929  &lt; 2e-16 ***
+acceleration   0.080576   0.098845   0.815  0.41548    
+year           0.750773   0.050973  14.729  &lt; 2e-16 ***
+origin         1.426141   0.278136   5.127 4.67e-07 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 3.328 on 384 degrees of freedom
+Multiple R-squared:  0.8215,    Adjusted R-squared:  0.8182 
+F-statistic: 252.4 on 7 and 384 DF,  p-value: &lt; 2.2e-16</code></pre>
+</div>
+</div>
+<p>Let we comment on the results,</p>
+<p>In that linear regression model, we use all variables to construct our linear model except name in the dataset since it’s not quantitative as we said before.</p>
+<p>Based on the information provided, it seems like you are discussing a statistical model where the response variable is MPG and the predictors are displacement, weight, year, and origin. You have determined that all of these predictors have a statistically significant relationship with the response variable, as indicated by their p-values being below the threshold of 0.05.</p>
+<p>Furthermore, you have noted that the coefficient for the predictor year is 0.7507. This coefficient represents the relationship between the predictor year and the response variable MPG, while holding all other predictors constant. Specifically, this coefficient suggests that for every 3 years increase in the year of the car, the MPG increases by about 4 units.</p>
+<p>It’s important to keep in mind that the interpretation of the coefficients can be affected by the scale of the variables and the presence of interactions among the predictors. Additionally, while a p-value below 0.05 is often used as a threshold for statistical significance, it’s not a definitive rule and should be interpreted with caution.</p>
+<p>Overall, it seems like you have a statistically significant model with some interesting findings about the relationship between the predictors and the response variable. However, further analysis and interpretation may be necessary to fully understand the implications of these results.ü</p>
+<p><strong>d) Use the plot() function to produce diagnostic plots of the linear regression fit. Comment on any problems you see with the fit. Do the residual plots suggest any unusually large outliers ? Does the leverage plot identify any observations with unusually high leverage?</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(df.mlr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="IE451_HW3_Q1_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid" width="672"></p>
+</div>
+<div class="cell-output-display">
+<p><img src="IE451_HW3_Q1_files/figure-html/unnamed-chunk-7-2.png" class="img-fluid" width="672"></p>
+</div>
+<div class="cell-output-display">
+<p><img src="IE451_HW3_Q1_files/figure-html/unnamed-chunk-7-3.png" class="img-fluid" width="672"></p>
+</div>
+<div class="cell-output-display">
+<p><img src="IE451_HW3_Q1_files/figure-html/unnamed-chunk-7-4.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>I want to comment all these 4 plots.</p>
+<ul>
+<li><p><strong>Residuals vs Fitted Plot:</strong></p>
+<p>In the graph Residuals vs Fitted Plot, it appears that there is evidence of non-linearity and non-constant variance in the data. The U-shape pattern in the residuals suggests that a linear model may not adequately capture the relationship between the variables, and that a more complex model with non-linear terms may be necessary. The funnel shape in the residual plot indicates that the spread of the residuals is not constant across the range of the predictor variable, which violates the assumption of homoscedasticity. This can lead to biased parameter estimates and unreliable inference. One approach to addressing these issues would be to consider fitting a nonlinear model or using transformations of the predictor variable to account for the non-linearity and heteroscedasticity.</p></li>
+<li><p><strong>Normal Q-Q:</strong></p>
+<p>In the graph Normal Q-Q, it appears that the normality assumption for the residuals may be violated, as evidenced by the observations that do not lie on the dashed line in the normal Q-Q plot. This could potentially indicate that the residuals are not normally distributed, which can lead to biased parameter estimates and incorrect inference. It may be helpful to further investigate the nature of the departures from normality, for example by examining other diagnostic plots or conducting formal tests of normality. If significant departures from normality are detected, it may be necessary to consider alternative modeling approaches or to use methods that are robust to departures from normality.</p></li>
+<li><p><strong>Scale - Location:</strong></p>
+<p>It appears that the scale-location plot does not show any outliers because all the standardized residuals are within the range of [0,2].</p></li>
+</ul>
+<p><strong>Residuals vs Leverage:</strong></p>
+<ul>
+<li>It appears that the residuals vs.&nbsp;leverage plot does not show any observations with high leverage points, as none of the points are above the Cook’s distance line. However, it is important to note that the absence of high leverage points does not necessarily mean that the model is free of influential observations or that it is a good fit for the data. It is important to examine other diagnostic plots and statistical measures to assess the overall adequacy of the model, including the goodness of fit, the presence of outliers or influential observations, and the normality and homoscedasticity of the residuals. If issues are detected, it may be necessary to consider alternative modeling approaches or data transformations to address them.</li>
+</ul>
+<p><strong>(e) Use the * and : symbols to fit linear regression models with interaction effects. Do any interactions appear to be statistically significant?</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>lm.df2 <span class="ot">&lt;-</span> <span class="fu">lm</span>(mpg <span class="sc">~</span> cylinders<span class="sc">*</span>displacement <span class="sc">+</span> horsepower<span class="sc">*</span>weight <span class="sc">+</span> acceleration <span class="sc">*</span>year <span class="sc">+</span> cylinders<span class="sc">*</span>origin ,<span class="at">data=</span>df)</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(lm.df2 )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = mpg ~ cylinders * displacement + horsepower * weight + 
+    acceleration * year + cylinders * origin, data = df)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-8.6734 -1.5452 -0.0555  1.2971 11.3844 
+
+Coefficients:
+                         Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)             1.145e+02  1.850e+01   6.188 1.58e-09 ***
+cylinders              -1.088e+00  7.457e-01  -1.459  0.14534    
+displacement           -2.203e-02  1.574e-02  -1.400  0.16232    
+horsepower             -2.266e-01  2.590e-02  -8.749  &lt; 2e-16 ***
+weight                 -9.916e-03  9.050e-04 -10.957  &lt; 2e-16 ***
+acceleration           -6.815e+00  1.149e+00  -5.929 6.84e-09 ***
+year                   -6.300e-01  2.395e-01  -2.630  0.00888 ** 
+origin                 -1.670e+00  1.293e+00  -1.292  0.19713    
+cylinders:displacement  3.223e-03  2.310e-03   1.395  0.16381    
+horsepower:weight       4.927e-05  6.771e-06   7.276 1.98e-12 ***
+acceleration:year       8.773e-02  1.490e-02   5.888 8.62e-09 ***
+cylinders:origin        5.450e-01  2.991e-01   1.822  0.06917 .  
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 2.79 on 380 degrees of freedom
+Multiple R-squared:  0.8759,    Adjusted R-squared:  0.8723 
+F-statistic: 243.7 on 11 and 380 DF,  p-value: &lt; 2.2e-16</code></pre>
+</div>
+</div>
+<p>The interactions that are statistically significant are <code>horsepower*weight</code> <em>and</em> <code>acceleration * year</code> with a p value less than 0.5. (FOR THE “*” PART).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>lm.df3 <span class="ot">&lt;-</span> <span class="fu">lm</span>(mpg <span class="sc">~</span> cylinders<span class="sc">*</span>displacement <span class="sc">+</span> horsepower<span class="sc">:</span>weight <span class="sc">+</span> acceleration <span class="sc">:</span>year <span class="sc">+</span> cylinders<span class="sc">:</span>origin ,<span class="at">data=</span>df)</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(lm.df3 )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = mpg ~ cylinders * displacement + horsepower:weight + 
+    acceleration:year + cylinders:origin, data = df)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-14.7194  -2.3224  -0.4118   1.8886  16.5834 
+
+Coefficients:
+                         Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)             4.800e+01  2.783e+00  17.249  &lt; 2e-16 ***
+cylinders              -4.303e+00  5.298e-01  -8.121 6.32e-15 ***
+displacement           -1.273e-01  1.653e-02  -7.699 1.17e-13 ***
+cylinders:displacement  1.932e-02  2.217e-03   8.716  &lt; 2e-16 ***
+horsepower:weight      -2.154e-05  2.974e-06  -7.244 2.40e-12 ***
+acceleration:year       4.521e-03  1.154e-03   3.916 0.000106 ***
+cylinders:origin        2.384e-01  8.274e-02   2.881 0.004189 ** 
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 4.059 on 385 degrees of freedom
+Multiple R-squared:  0.7337,    Adjusted R-squared:  0.7296 
+F-statistic: 176.8 on 6 and 385 DF,  p-value: &lt; 2.2e-16</code></pre>
+</div>
+</div>
+<p>The interactions that are statistically significant are horsepower:weight and acceleration:year and cylinders:origin with a p value less than 0.5. (FOR THE “:” PART).</p>
+<p><strong>Why we get different results?</strong></p>
+<p>The <strong><code>*</code></strong> symbol indicates that the interaction term between two predictors should include both main effects as well as the interaction effect. For example, in the formula <strong><code>y ~ x1 * x2</code></strong>, R will include the terms <strong><code>x1</code></strong>, <strong><code>x2</code></strong>, and <strong><code>x1:x2</code></strong> in the linear regression model. This means that the model will estimate the effect of <strong><code>x1</code></strong> on <strong><code>y</code></strong>, the effect of <strong><code>x2</code></strong> on <strong><code>y</code></strong>, and the effect of the interaction between <strong><code>x1</code></strong> and <strong><code>x2</code></strong> on <strong><code>y</code></strong>.</p>
+<p>The <strong><code>:</code></strong> symbol indicates that the interaction term between two predictors should only include the interaction effect, without the main effects. For example, in the formula <strong><code>y ~ x1 : x2</code></strong>, R will only include the term <strong><code>x1:x2</code></strong> in the linear regression model, but not the individual terms <strong><code>x1</code></strong> and <strong><code>x2</code></strong>. This means that the model will only estimate the effect of the interaction between <strong><code>x1</code></strong> and <strong><code>x2</code></strong> on <strong><code>y</code></strong>, but not the separate effects of <strong><code>x1</code></strong> and <strong><code>x2</code></strong> on <strong><code>y</code></strong>.</p>
+<p>In summary, the difference between <strong><code>*</code></strong> and <strong><code>:</code></strong> as an interaction term in R is that <strong><code>*</code></strong> includes both main effects and interaction effect, while <strong><code>:</code></strong> includes only the interaction effect.</p>
+<p><strong>f)</strong> <strong>Try a few different transformations of the variables, such as log(X), √X, X2. Comment on your findings.</strong></p>
+<p><strong>TRANSFORMATION-1:</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>lm.fit4 <span class="ot">&lt;-</span> <span class="fu">lm</span>(mpg <span class="sc">~</span> horsepower <span class="sc">+</span> <span class="fu">I</span>(horsepower<span class="sc">^</span><span class="dv">2</span>), <span class="at">data=</span>df)</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(lm.fit4)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = mpg ~ horsepower + I(horsepower^2), data = df)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-14.7135  -2.5943  -0.0859   2.2868  15.8961 
+
+Coefficients:
+                  Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)     56.9000997  1.8004268   31.60   &lt;2e-16 ***
+horsepower      -0.4661896  0.0311246  -14.98   &lt;2e-16 ***
+I(horsepower^2)  0.0012305  0.0001221   10.08   &lt;2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 4.374 on 389 degrees of freedom
+Multiple R-squared:  0.6876,    Adjusted R-squared:  0.686 
+F-statistic:   428 on 2 and 389 DF,  p-value: &lt; 2.2e-16</code></pre>
+</div>
+</div>
+<ul>
+<li>Examining the Residuals vs Leverage plot before, we did not identify any observations that have a high leverage point and could potentially affect the regression model. Additionally, the Residuals vs Fitted plot indicates that the residuals appear to follow a roughly linear pattern, without any obvious nonlinearities or other issues that might indicate a problem with the model fit.</li>
+</ul>
+<p><strong>TRANSFORMATION-2:</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(<span class="fu">lm</span>(mpg <span class="sc">~</span> . <span class="sc">-</span>name <span class="sc">+</span> <span class="fu">log</span>(acceleration), <span class="at">data=</span>df))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = mpg ~ . - name + log(acceleration), data = df)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-9.7931 -2.0052 -0.1279  1.9299 13.1085 
+
+Coefficients:
+                    Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)        4.552e+01  1.479e+01   3.077  0.00224 ** 
+cylinders         -2.796e-01  3.193e-01  -0.876  0.38172    
+displacement       8.042e-03  7.805e-03   1.030  0.30344    
+horsepower        -3.434e-02  1.401e-02  -2.450  0.01473 *  
+weight            -5.343e-03  6.854e-04  -7.795 6.15e-14 ***
+acceleration       2.167e+00  4.782e-01   4.532 7.82e-06 ***
+year               7.560e-01  4.978e-02  15.186  &lt; 2e-16 ***
+origin             1.329e+00  2.724e-01   4.877 1.58e-06 ***
+log(acceleration) -3.513e+01  7.886e+00  -4.455 1.10e-05 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 3.249 on 383 degrees of freedom
+Multiple R-squared:  0.8303,    Adjusted R-squared:  0.8267 
+F-statistic: 234.2 on 8 and 383 DF,  p-value: &lt; 2.2e-16</code></pre>
+</div>
+</div>
+<ul>
+<li>If we look at our first model in c), we can say that applying log transformation on acceleration makes this variable more significant since the when ve apply log transformation on acceleration we observe significant p-value drop from 0.4158 to 7.82e-06. Since the transformed p value is less than 0.05, it makes acceleration statistically significant unlike the model in c).</li>
+</ul>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
