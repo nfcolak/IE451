@@ -1,0 +1,201 @@
+---
+title: "IE451_HW2_Q2"
+format: html
+editor: visual
+author: Necati Furkan Çolak
+date: "04 03 2023"
+output: html_document
+---
+
+## HW2_Question.2 (Exercise-10) :
+
+```{r}
+library(ISLR2)
+library(ggplot2)
+```
+
+**a) To begin, load in the Boston data set.The Boston data set is part of the MASS library in R. How many rows are in this data set? How many columns? What do the rows and columns represent?**
+
+In first we uploaded the data Boston and check its dimension to find column and row number.
+
+```{r}
+dff <- Boston
+dff = na.omit(dff)
+dim(dff)
+```
+
+With the observation above, there are 506 row and 13 column at the dataset.
+
+To check what they represent we can use head function as in the example below.
+
+```{r}
+head(dff)
+```
+
+**b) Make some pairwise scatterplots of the predictors (columns) in this data set. Describe your findings:**
+
+```{r}
+str(dff)
+dff$chas <- as.numeric(dff$chas)
+dff$rad <- as.numeric(dff$rad)
+pairs(dff)
+```
+
+**c) Are any of the predictors associated with per capita crime rate? If so, explain the relationship.**
+
+```{r}
+par(mfrow = c(2, 2))
+plot(dff$crim ~ dff$zn,
+     log = 'xy',
+     col = 'steelblue')
+
+plot(dff$crim ~ dff$age,
+     log = 'xy',
+     col = 'steelblue')
+
+plot(dff$crim ~ dff$dis,
+     log = 'xy',
+     col = 'black')
+
+plot(dff$crim ~ dff$lstat,
+     log = 'xy',
+     col = 'black')
+```
+
+```{r}
+my_plot_crim1 <- ggplot(data = dff, aes(y = crim, x = zn))
+my_plot_crim1 <- my_plot_crim1 + geom_point()
+my_plot_crim1 <- my_plot_crim1 + geom_point(size = 3, color = "red") + ggtitle("crim vs zn")
+print(my_plot_crim1)
+
+my_plot_crim4 <- ggplot(data = dff, aes(y = crim, x = age))
+my_plot_crim4 <- my_plot_crim4 + geom_point()
+my_plot_crim4 <- my_plot_crim4 + geom_point(size = 3, color = "blue") + ggtitle("crim vs age")
+print(my_plot_crim4)
+
+my_plot_crim3 <- ggplot(data = dff, aes(y = crim, x = dis))
+my_plot_crim3 <- my_plot_crim3 + geom_point()
+my_plot_crim3 <- my_plot_crim3 + geom_point(size = 3, color = "green") + ggtitle("crim vs dis")
+print(my_plot_crim3)
+
+my_plot_crim2 <- ggplot(data = dff, aes(y = crim, x = lstat))
+my_plot_crim2 <- my_plot_crim2 + geom_point()
+my_plot_crim2 <- my_plot_crim2 + geom_point(size = 3, color = "black") + ggtitle ("crim vs lstat")
+print(my_plot_crim2)
+```
+
+In the graphs above,
+
+-   As the proportion of owner-occupied units built prior to 1940 **increases**, the Per Capita Crime Rate **increases**.
+
+-   As the weighted mean of distances to five Boston employment centres **increases**, the Per Capita Crime Rate **decreases**.
+
+-   As the lower status of the population (percent) **increases**, the Per Capita Crime Rate **increases**.
+
+**d) Do any of the suburbs of Boston appear to have particularly high crime rates? Tax rates? Pupil-teacher ratios? Comment on the range of each predictor.**
+
+```{r}
+summary(dff$crim)
+```
+
+```{r}
+summary(dff$tax)
+```
+
+```{r}
+summary(dff$ptratio)
+```
+
+```{r}
+qplot(dff$crim, binwidth=5 , xlab = "Crime rate", ylab="Number of Suburbs")
+```
+
+```{r}
+qplot(dff$tax, binwidth=50 , xlab = "Full-value property-tax rate per $10,000", ylab="Number of Suburbs")
+```
+
+```{r}
+qplot(dff$ptratio, binwidth=5, xlab ="Pupil-teacher ratio by town", ylab="Number of Suburbs")
+```
+
+Given that the median and maximum values for the crime rate are approximately 0.26% and 89%, respectively, it is evident that certain neighborhoods have an alarmingly high crime rate.
+
+```{r}
+selection <- subset( dff, crim > 10)
+nrow(selection)/ nrow(dff)
+```
+
+The crime rate in more than one-tenth of the neighborhoods exceeds 10%.
+
+```{r}
+selection <- subset( dff, crim > 50)
+nrow(selection)/ nrow(dff)
+```
+
+The crime rate in slightly less than 1% of neighborhoods is greater than 50%. The Tax rate histogram suggests that there are only a few neighborhoods with higher tax rates. The median and mean tax rates are \$330 and \$408.20, respectively, per \$10,000 of full-value property tax.
+
+```{r}
+selection <- subset( dff, tax< 600)
+nrow(selection)/ nrow(dff)
+```
+
+73% of the neighborhood pay less than \$600:
+
+```{r}
+selection <- subset( dff, tax> 600) 
+nrow(selection)/ nrow(dff)
+```
+
+27% of the neighborhood pays more than 600 dollars.
+
+**e) How many of the suburbs in this data set bound the Charles river?**
+
+```{r}
+nrow(subset(dff, chas ==1)) 
+```
+
+So, there are 35 suburbs that havebound the Charles river.
+
+**f) What is the median pupil-teacher ratio among the towns in this data set?**
+
+```{r}
+summary(dff$ptratio)
+```
+
+The median pupil-teacher ratio is 19.05 pupils for each teacher.
+
+**g)** **Which suburb of Boston has lowest median value of owner occupied homes?What are the values of the other predictors for that suburb, and how do those values compare to the overall ranges for those predictors?**
+
+```{r}
+selection <- dff[order(dff$medv),]
+selection[1,]
+```
+
+For answering the second part of this question, we can refer to the summary data that pertains to suburb number 399, which has a median value of \$5000.
+
+```{r}
+summary(dff)
+```
+
+Suburb number 399 differs from the summary of Boston suburbs in several ways. Its per capita crime rate is around 10 times higher than the average of Boston suburbs, and it has a lower proportion of residential land zoned for lots over 25,000 sq. ft. However, the proportion of non-retail business acres per town in suburb #399 is higher than the average of Boston suburbs, and it is also relatively in line with the average in terms of the presence of Charles River, nitrogen oxides concentration, and accessibility to radial highways. In terms of the average number of rooms per dwelling, suburb #399 is below the Boston average. Additionally, it has a higher proportion of owner-occupied units built prior to 1940, a lower weighted mean of distances to five Boston employment centres, a higher full-value property-tax rate per \$10,000, and a higher pupil-teacher ratio by town. Furthermore, it has a higher proportion of blacks by town and a higher percentage of the lower status of the population. Lastly, the median value of owner-occupied homes in suburb #399 is below the Boston average.
+
+**h)** **In this data set, how many of the suburbs average more than seven rooms per dwelling? More than eight rooms per dwelling? Comment on the suburbs that average more than eight rooms per dwelling.**
+
+```{r}
+nrow(subset(dff, rm  > 7))
+```
+
+In that case, there are 64 suburbs more than 7 rooms per dwelling.
+
+```{r}
+nrow(subset(dff, rm  > 8))
+```
+
+There are 13 suburbs with more than 8 rooms per dwelling
+
+```{r}
+dwelling_selection = subset(dff, rm > 8)
+summary(dwelling_selection)
+```
+
+The 13 suburbs that have more than 8 rooms per dwelling share some common traits. They have a very low average per capita crime rate, which is lower than the average rate in Boston. These suburbs also have a high proportion of owner-occupied units that were built before 1940, with an average of 71.54%. Additionally, the median value of owner-occupied homes in these suburbs is higher than the Boston average, at \$44,000. However, the percentage of lower-status population in these suburbs is lower than the Boston average, with an average of 4.31%.
