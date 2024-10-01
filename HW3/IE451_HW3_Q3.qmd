@@ -1,0 +1,372 @@
+---
+title: "IE451_HW3_Q3"
+format: html
+editor: visual
+author: Necati Furkan Çolak
+date: 03/27/2023
+output: html_document
+---
+
+## Imports:
+
+```{r}
+library(ISLR2)
+library(ggplot2)
+```
+
+## **Data Import and Preprocess:**
+
+In this chapter, we store data under the name of dfff. Also, with head and summary functions we try to see the general view of data.
+
+```{r}
+dfff <- Boston
+head(dfff)
+summary(dfff)
+```
+
+## ISLR Chapter 3, Question 15:
+
+**a) This problem involves the "Boston" data set, per capita crime rate is the response, and the other variables are the predictors. For each predictor, fit a simple linear regression model to predict the response. Describe your results. In which of the models is there a statistically significant association between the predictor and the response ? Create some plots to back up your assertions.**
+
+**FOR ZN:**
+
+$\begin{equation} \text{Crim} = \text{β1}*\text{zn} + \text{β0} \end{equation}$\
+
+```{r}
+model1 <- lm(crim ~ zn, data=dfff)
+summary(model1)
+```
+
+**PLOT:**
+
+```{r}
+par(mfrow = c(2,2))
+plot(model1)
+```
+
+**FOR INDUS:**
+
+$\begin{equation} \text{Crim} = \text{β1}*\text{indus} + \text{β0} \end{equation}$
+
+```{r}
+model2 <- lm(crim ~ indus, data=dfff)
+summary(model2)
+```
+
+**PLOT:**
+
+```{r}
+par(mfrow = c(2,2))
+plot(model2)
+```
+
+**FOR CHAS:**
+
+$\begin{equation} \text{Crim} = \text{β1}*\text{chas} + \text{β0} \end{equation}$
+
+```{r}
+model3 <- lm(crim ~ chas, data=dfff)
+summary(model3)
+```
+
+**PLOT:**
+
+```{r}
+par(mfrow = c(2,2))
+plot(model3)
+```
+
+**FOR NOX:**
+
+$\begin{equation} \text{Crim} = \text{β1}*\text{nox} + \text{β0} \end{equation}$
+
+```{r}
+model4 <- lm(crim ~ nox, data=dfff)
+summary(model4)
+```
+
+**PLOT:**
+
+```{r}
+par(mfrow = c(2,2))
+plot(model4)
+```
+
+**FOR RM:**
+
+$\begin{equation} \text{Crim} = \text{β1}*\text{rm} + \text{β0} \end{equation}$
+
+```{r}
+model5 <- lm(crim ~ rm, data=dfff)
+summary(model5)
+```
+
+**PLOT:**
+
+```{r}
+par(mfrow = c(2,2))
+plot(model5)
+```
+
+**FOR AGE:**
+
+$\begin{equation} \text{Crim} = \text{β1}*\text{age} + \text{β0} \end{equation}$
+
+```{r}
+model6 <- lm(crim ~ rm, data=dfff)
+summary(model6)
+```
+
+**PLOT:**
+
+```{r}
+par(mfrow = c(2,2))
+plot(model6)
+```
+
+**FOR DIS:**
+
+$\begin{equation} \text{Crim} = \text{β1}*\text{dis} + \text{β0} \end{equation}$
+
+```{r}
+model7 <- lm(crim ~ dis, data=dfff)
+summary(model7)
+```
+
+**PLOT:**
+
+```{r}
+par(mfrow = c(2,2))
+plot(model7)
+```
+
+**FOR RAD:**
+
+$\begin{equation} \text{Crim} = \text{β1}*\text{rad} + \text{β0} \end{equation}$
+
+```{r}
+model8 <- lm(crim ~ dis, data=dfff)
+summary(model8)
+```
+
+**PLOT:**
+
+```{r}
+par(mfrow = c(2,2))
+plot(model8)
+```
+
+**FOR TAX:**
+
+$\begin{equation} \text{Crim} = \text{β1}*\text{tax} + \text{β0} \end{equation}$
+
+```{r}
+model9 <- lm(crim ~ dis, data=dfff)
+summary(model9)
+```
+
+**PLOT:**
+
+```{r}
+par(mfrow = c(2,2))
+plot(model9)
+```
+
+**FOR PTRATIO:**
+
+$\begin{equation} \text{Crim} = \text{β1}*\text{ptratio} + \text{β0} \end{equation}$
+
+```{r}
+model10 <- lm(crim ~ ptratio, data=dfff)
+summary(model10)
+```
+
+**PLOT:**
+
+```{r}
+par(mfrow = c(2,2))
+plot(model10)
+```
+
+**FOR LSTAT:**
+
+$\begin{equation} \text{Crim} = \text{β1}*\text{lstat} + \text{β0} \end{equation}$
+
+```{r}
+model11 <- lm(crim ~ lstat, data=dfff)
+summary(model11)
+```
+
+**PLOT:**
+
+```{r}
+par(mfrow = c(2,2))
+plot(model11)
+```
+
+**FOR MEDV:**
+
+$\begin{equation} \text{Crim} = \text{β1}*\text{medv} + \text{β0} \end{equation}$
+
+```{r}
+model12 <- lm(crim ~ medv, data=dfff)
+summary(model12)
+```
+
+**PLOT:**
+
+```{r}
+par(mfrow = c(2,2))
+plot(model12)
+```
+
+-   **RESULT:** Except chas, all remaining variables are statistically significant if we build our linear regression model with only one predictor. Chas are not statistically significant since it's p value is more than 0.05.
+
+**b) Fit a multiple regression model to predict the response using all of the predictors. Describe your results. For which predictors can we reject the null hypothesis H0 : βj = 0?**
+
+```{r}
+model_all = lm(crim ~ ., data=dfff)
+summary(model_all)
+```
+
+-   We can reject null hypothesis for zn, dis, rad and medv since their p values are less than 0.05.
+
+**c) How do your results from (a) compare to your results from (b)? Create a plot displaying the univariate regression coefficients from (a) on the x-axis, and the multiple regression coefficients from (b) on the y-axis. That is, each predictor is displayed as a single point in the plot. Its coefficient in a simple linear regression model is shown on the x-axis, and its coefficient estimate in the multiple linear regression model is shown on the y-axis.**
+
+**COMPARISON:**
+
+In scenario a), we constructed 12 different models, each using only one variable from the dataset. While this approach may seem straightforward, it can lead to a significant problem: since the models only consider one variable, all predictors appear statistically significant in these models. In other words, the model learns to make decisions based solely on the single variable it has been given, which can lead to incomplete and biased results.
+
+On the other hand, in scenario b), we built a model using all the predictors in the dataset. This approach allows us to see the weight of each predictor in the model, as the model considers all the variables together to make decisions. By using multiple predictors, the model can make more informed and accurate predictions, and we can see which predictors are more or less important to the model's overall performance. Additionally, by using multiple predictors, we can identify any statistically insignificant predictors that do not contribute meaningfully to the model's performance. This helps us to build a more robust and accurate model that better captures the underlying patterns and relationships in the data.
+
+```{r}
+x = c(coefficients(model1)[2],
+      coefficients(model2)[2],
+      coefficients(model3)[2],
+      coefficients(model4)[2],
+      coefficients(model5)[2],
+      coefficients(model6)[2],
+      coefficients(model7)[2],
+      coefficients(model8)[2],
+      coefficients(model9)[2],
+      coefficients(model10)[2],
+      coefficients(model11)[2],
+      coefficients(model12)[2])
+y = coefficients(model_all)[2:13]
+```
+
+```{r}
+x
+```
+
+```{r}
+y
+```
+
+```{r}
+par(mfrow = c(1,1)) # 1 plot
+plot(x, y)
+```
+
+**d) Is there evidence of non-linear association between any of the predictors and the response? To answer this question, for each predictor X, fit a model of the form**
+
+$\begin{equation} Y = \beta_0 + \beta_1X + \beta_2X^2 + \beta_3X^3 + \varepsilon \end{equation}$
+
+**FOR ZN:**
+
+```{r}
+lm.poly.zn = lm(crim ~ zn + I(zn^2) + I(zn^3), data = dfff)
+summary(lm.poly.zn)
+```
+
+Zn does not have a non-linear association with crim, according to the p-values.
+
+**FOR INDUS:**
+
+```{r}
+lm.poly.indus = lm(crim ~ indus + I(indus^2) + I(indus^3), data = dfff)
+summary(lm.poly.indus)
+```
+
+Indus shows that it has a non-linear association with crim based on the p-values.
+
+**FOR CHAS:**
+
+```{r}
+lm.poly.chas = lm(crim ~ chas + I(chas^2) + I(chas^3), data = dfff)
+summary(lm.poly.chas)
+```
+
+Since chas is a factor, squaring it does not affect it.
+
+**FOR NOX:**
+
+```{r}
+lm.poly.nox = lm(crim ~ nox + I(nox^2) + I(nox^3), data = dfff)
+summary(lm.poly.nox)
+```
+
+Nox shows that it has a non-linear association with crim based on the p-values.
+
+**FOR RM:**
+
+```{r}
+lm.poly.rm = lm(crim ~ rm + I(rm^2) + I(rm^3), data = dfff)
+summary(lm.poly.rm)
+```
+
+Rm does not show that it has a non-linear association with crim based on the p-values.
+
+**FOR AGE:**
+
+```{r}
+lm.poly.age = lm(crim ~ age + I(age^2) + I(age^3), data = dfff)
+summary(lm.poly.age)
+```
+
+Age shows that it has a non-linear association with crim based on the p-values.
+
+**FOR DIS:**
+
+```{r}
+lm.poly.dis = lm(crim ~ dis + I(dis^2) + I(dis^3), data = dfff)
+summary(lm.poly.dis)
+```
+
+Dis shows that it has a non-linear association with crim based on the p-values.
+
+**FOR RAD:**
+
+```{r}
+lm.poly.rad = lm(crim ~ rad + I(rad^2) + I(rad^3), data = dfff)
+summary(lm.poly.rad)
+```
+
+Rad does not show that it has a non-linear association with crim based on the p-values.
+
+**FOR TAX:**
+
+```{r}
+lm.poly.tax = lm(crim ~ tax + I(tax^2) + I(tax^3), data = dfff)
+summary(lm.poly.tax)
+```
+
+Tax does not show that it has a non-linear association with crim based on the p-values.
+
+**FOR PTRATIO:**
+
+```{r}
+lm.poly.ptratio = lm(crim ~ ptratio + I(ptratio^2) + I(ptratio^3), data = dfff)
+summary(lm.poly.ptratio)
+```
+
+Ptratio shows that it has a non-linear association with crim based on the p-values.
+
+**FOR MEDV:**
+
+```{r}
+lm.poly.medv = lm(crim ~ medv + I(medv^2) + I(medv^3), data = dfff)
+summary(lm.poly.medv)
+```
+
+Medv shows that it has a non-linear association with crim based on the p-values.

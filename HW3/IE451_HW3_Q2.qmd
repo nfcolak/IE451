@@ -1,0 +1,98 @@
+---
+title: "IE451_HW3_Q2"
+format: html
+editor: visual
+author: Necati Furkan Çolak
+date: 03/27/2023
+output: html_document
+---
+
+## Imports:
+
+```{r}
+library(ISLR2)
+library(ggplot2)
+```
+
+## **Data Import and Preprocess:**
+
+In this chapter, we store data under the name of dff. Also, with head and summary functions we try to see the general view of data.
+
+```{r}
+dff <- Carseats
+head(dff)
+summary(dff)
+```
+
+## ISLR Chapter 3, Question 10:
+
+**a) Fit a multiple regression model to predict Sales using Price, Urban and US.**
+
+```{r}
+model1 <- lm(Sales ~ Price + Urban + US, data = dff)
+summary(model1)
+```
+
+**b)** **Provide an interpretation of each coefficient in the model. Be careful, some of the variables in the model are qualitative!**
+
+Urban and US are the variables that in qualitative data type.
+
+-   **Price:** An increase in price by \$1 results in a decrease of 54.4588492 units in sales on average.
+
+-   **Urban:** On average the unit sales in urban location are 21.9161508 units less than in rural location all other predictors remaining fixed.
+
+-   **US:** On average the unit sales in a US store are 1200.5726978 units more than in a non US store all other predictors remaining fixed.
+
+**c) Write out the model in equation form, being careful to handle the qualitative variables properly.**
+
+$\begin{equation} \text{Sales} = 13.0434689 - 0.0544588*\text{Price} - 0.0219162*\text{Urban} + 1.2005727*\text{US} + \epsilon \end{equation}$
+
+It should also be noted that,
+
+Urban is 1 if the store is located in Urban area, otherwise the value of Urban would be 0.
+
+US is 1 if the store is located in US , otherwise the value of US would be 0.
+
+**d) For which of the predictors can you reject the null hypothesis**?
+
+To determine this first we need to check calculated p values of the model.
+
+-   Price: 2e-16 **\|** UrbanYes: 0.936 **\|** USYes: 4.86e-06
+
+In that case, we can reject the null hypothesis for the "Price" and "USYes" variables since the p values of related variables are less than 0.05.
+
+-   However, we cannot reject "UrbanYes" since the the variable's p value is greater than 0.05.
+
+**e) On the basis of your response to the previous question, fit a smaller model that only uses the predictors for which there is evidence of association with the outcome.**
+
+-   US and Price has the significant since their p value is less than 0.05. I used both variables to generate model that only uses the predictors for which there is evidence of association with the outcome.
+
+```{r}
+model2 <-  lm(Sales ~ Price + US, data = dff)
+summary(model2)
+```
+
+**f) How well do the models in (a) and (e) fit the data?**
+
+-   Their R^2^ is nearly same however, Adjusted-R^2^ is slightly better in chapter e). Also, while residual standard error 2472 in chapter a), it's 2469 in chapter e). Therefore, we can say that e) fits slightly better than the a).
+
+**g) Using the model from (e), obtain 95% confidence intervals for the coefficient(s).**
+
+```{r}
+confint(model2, level = 0.95)
+```
+
+**h) Is there evidence of outliers or high leverage observations in the model from (e)?**
+
+```{r}
+plot(predict(model2), rstudent(model2))
+```
+
+There are no probable outliers revealed by the linear regression because the studentized residuals seem to be confined by (-3 to 3).
+
+```{r}
+par(mfrow = c(2,2))
+plot(model2)
+```
+
+The fact that some points are greater than (p+1)/n (0.0075) indicates that the associated points have considerable leverage.

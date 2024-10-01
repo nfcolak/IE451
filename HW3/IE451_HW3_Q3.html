@@ -1,0 +1,1107 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.1.189">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Necati Furkan Çolak">
+<meta name="dcterms.date" content="2023-03-27">
+
+<title>IE451_HW3_Q3</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="IE451_HW3_Q3_files/libs/clipboard/clipboard.min.js"></script>
+<script src="IE451_HW3_Q3_files/libs/quarto-html/quarto.js"></script>
+<script src="IE451_HW3_Q3_files/libs/quarto-html/popper.min.js"></script>
+<script src="IE451_HW3_Q3_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="IE451_HW3_Q3_files/libs/quarto-html/anchor.min.js"></script>
+<link href="IE451_HW3_Q3_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="IE451_HW3_Q3_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="IE451_HW3_Q3_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="IE451_HW3_Q3_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="IE451_HW3_Q3_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">IE451_HW3_Q3</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Necati Furkan Çolak </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">March 27, 2023</p>
+    </div>
+  </div>
+    
+  </div>
+  
+
+</header>
+
+<section id="imports" class="level2">
+<h2 class="anchored" data-anchor-id="imports">Imports:</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ISLR2)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="data-import-and-preprocess" class="level2">
+<h2 class="anchored" data-anchor-id="data-import-and-preprocess"><strong>Data Import and Preprocess:</strong></h2>
+<p>In this chapter, we store data under the name of dfff. Also, with head and summary functions we try to see the general view of data.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>dfff <span class="ot">&lt;-</span> Boston</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(dfff)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     crim zn indus chas   nox    rm  age    dis rad tax ptratio lstat medv
+1 0.00632 18  2.31    0 0.538 6.575 65.2 4.0900   1 296    15.3  4.98 24.0
+2 0.02731  0  7.07    0 0.469 6.421 78.9 4.9671   2 242    17.8  9.14 21.6
+3 0.02729  0  7.07    0 0.469 7.185 61.1 4.9671   2 242    17.8  4.03 34.7
+4 0.03237  0  2.18    0 0.458 6.998 45.8 6.0622   3 222    18.7  2.94 33.4
+5 0.06905  0  2.18    0 0.458 7.147 54.2 6.0622   3 222    18.7  5.33 36.2
+6 0.02985  0  2.18    0 0.458 6.430 58.7 6.0622   3 222    18.7  5.21 28.7</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(dfff)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>      crim                zn             indus            chas        
+ Min.   : 0.00632   Min.   :  0.00   Min.   : 0.46   Min.   :0.00000  
+ 1st Qu.: 0.08205   1st Qu.:  0.00   1st Qu.: 5.19   1st Qu.:0.00000  
+ Median : 0.25651   Median :  0.00   Median : 9.69   Median :0.00000  
+ Mean   : 3.61352   Mean   : 11.36   Mean   :11.14   Mean   :0.06917  
+ 3rd Qu.: 3.67708   3rd Qu.: 12.50   3rd Qu.:18.10   3rd Qu.:0.00000  
+ Max.   :88.97620   Max.   :100.00   Max.   :27.74   Max.   :1.00000  
+      nox               rm             age              dis        
+ Min.   :0.3850   Min.   :3.561   Min.   :  2.90   Min.   : 1.130  
+ 1st Qu.:0.4490   1st Qu.:5.886   1st Qu.: 45.02   1st Qu.: 2.100  
+ Median :0.5380   Median :6.208   Median : 77.50   Median : 3.207  
+ Mean   :0.5547   Mean   :6.285   Mean   : 68.57   Mean   : 3.795  
+ 3rd Qu.:0.6240   3rd Qu.:6.623   3rd Qu.: 94.08   3rd Qu.: 5.188  
+ Max.   :0.8710   Max.   :8.780   Max.   :100.00   Max.   :12.127  
+      rad              tax           ptratio          lstat      
+ Min.   : 1.000   Min.   :187.0   Min.   :12.60   Min.   : 1.73  
+ 1st Qu.: 4.000   1st Qu.:279.0   1st Qu.:17.40   1st Qu.: 6.95  
+ Median : 5.000   Median :330.0   Median :19.05   Median :11.36  
+ Mean   : 9.549   Mean   :408.2   Mean   :18.46   Mean   :12.65  
+ 3rd Qu.:24.000   3rd Qu.:666.0   3rd Qu.:20.20   3rd Qu.:16.95  
+ Max.   :24.000   Max.   :711.0   Max.   :22.00   Max.   :37.97  
+      medv      
+ Min.   : 5.00  
+ 1st Qu.:17.02  
+ Median :21.20  
+ Mean   :22.53  
+ 3rd Qu.:25.00  
+ Max.   :50.00  </code></pre>
+</div>
+</div>
+</section>
+<section id="islr-chapter-3-question-15" class="level2">
+<h2 class="anchored" data-anchor-id="islr-chapter-3-question-15">ISLR Chapter 3, Question 15:</h2>
+<p><strong>a) This problem involves the “Boston” data set, per capita crime rate is the response, and the other variables are the predictors. For each predictor, fit a simple linear regression model to predict the response. Describe your results. In which of the models is there a statistically significant association between the predictor and the response ? Create some plots to back up your assertions.</strong></p>
+<p><strong>FOR ZN:</strong></p>
+<p><span class="math inline">\(\begin{equation} \text{Crim} = \text{β1}*\text{zn} + \text{β0} \end{equation}\)</span><br>
+</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>model1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(crim <span class="sc">~</span> zn, <span class="at">data=</span>dfff)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = crim ~ zn, data = dfff)
+
+Residuals:
+   Min     1Q Median     3Q    Max 
+-4.429 -4.222 -2.620  1.250 84.523 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)  4.45369    0.41722  10.675  &lt; 2e-16 ***
+zn          -0.07393    0.01609  -4.594 5.51e-06 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 8.435 on 504 degrees of freedom
+Multiple R-squared:  0.04019,   Adjusted R-squared:  0.03828 
+F-statistic:  21.1 on 1 and 504 DF,  p-value: 5.506e-06</code></pre>
+</div>
+</div>
+<p><strong>PLOT:</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">2</span>))</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(model1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="IE451_HW3_Q3_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p><strong>FOR INDUS:</strong></p>
+<p><span class="math inline">\(\begin{equation} \text{Crim} = \text{β1}*\text{indus} + \text{β0} \end{equation}\)</span></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>model2 <span class="ot">&lt;-</span> <span class="fu">lm</span>(crim <span class="sc">~</span> indus, <span class="at">data=</span>dfff)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = crim ~ indus, data = dfff)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-11.972  -2.698  -0.736   0.712  81.813 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept) -2.06374    0.66723  -3.093  0.00209 ** 
+indus        0.50978    0.05102   9.991  &lt; 2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 7.866 on 504 degrees of freedom
+Multiple R-squared:  0.1653,    Adjusted R-squared:  0.1637 
+F-statistic: 99.82 on 1 and 504 DF,  p-value: &lt; 2.2e-16</code></pre>
+</div>
+</div>
+<p><strong>PLOT:</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">2</span>))</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(model2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="IE451_HW3_Q3_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p><strong>FOR CHAS:</strong></p>
+<p><span class="math inline">\(\begin{equation} \text{Crim} = \text{β1}*\text{chas} + \text{β0} \end{equation}\)</span></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>model3 <span class="ot">&lt;-</span> <span class="fu">lm</span>(crim <span class="sc">~</span> chas, <span class="at">data=</span>dfff)</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = crim ~ chas, data = dfff)
+
+Residuals:
+   Min     1Q Median     3Q    Max 
+-3.738 -3.661 -3.435  0.018 85.232 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)   3.7444     0.3961   9.453   &lt;2e-16 ***
+chas         -1.8928     1.5061  -1.257    0.209    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 8.597 on 504 degrees of freedom
+Multiple R-squared:  0.003124,  Adjusted R-squared:  0.001146 
+F-statistic: 1.579 on 1 and 504 DF,  p-value: 0.2094</code></pre>
+</div>
+</div>
+<p><strong>PLOT:</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">2</span>))</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(model3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="IE451_HW3_Q3_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p><strong>FOR NOX:</strong></p>
+<p><span class="math inline">\(\begin{equation} \text{Crim} = \text{β1}*\text{nox} + \text{β0} \end{equation}\)</span></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>model4 <span class="ot">&lt;-</span> <span class="fu">lm</span>(crim <span class="sc">~</span> nox, <span class="at">data=</span>dfff)</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model4)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = crim ~ nox, data = dfff)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-12.371  -2.738  -0.974   0.559  81.728 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)  -13.720      1.699  -8.073 5.08e-15 ***
+nox           31.249      2.999  10.419  &lt; 2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 7.81 on 504 degrees of freedom
+Multiple R-squared:  0.1772,    Adjusted R-squared:  0.1756 
+F-statistic: 108.6 on 1 and 504 DF,  p-value: &lt; 2.2e-16</code></pre>
+</div>
+</div>
+<p><strong>PLOT:</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">2</span>))</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(model4)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="IE451_HW3_Q3_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p><strong>FOR RM:</strong></p>
+<p><span class="math inline">\(\begin{equation} \text{Crim} = \text{β1}*\text{rm} + \text{β0} \end{equation}\)</span></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>model5 <span class="ot">&lt;-</span> <span class="fu">lm</span>(crim <span class="sc">~</span> rm, <span class="at">data=</span>dfff)</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model5)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = crim ~ rm, data = dfff)
+
+Residuals:
+   Min     1Q Median     3Q    Max 
+-6.604 -3.952 -2.654  0.989 87.197 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)   20.482      3.365   6.088 2.27e-09 ***
+rm            -2.684      0.532  -5.045 6.35e-07 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 8.401 on 504 degrees of freedom
+Multiple R-squared:  0.04807,   Adjusted R-squared:  0.04618 
+F-statistic: 25.45 on 1 and 504 DF,  p-value: 6.347e-07</code></pre>
+</div>
+</div>
+<p><strong>PLOT:</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">2</span>))</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(model5)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="IE451_HW3_Q3_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p><strong>FOR AGE:</strong></p>
+<p><span class="math inline">\(\begin{equation} \text{Crim} = \text{β1}*\text{age} + \text{β0} \end{equation}\)</span></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>model6 <span class="ot">&lt;-</span> <span class="fu">lm</span>(crim <span class="sc">~</span> rm, <span class="at">data=</span>dfff)</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model6)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = crim ~ rm, data = dfff)
+
+Residuals:
+   Min     1Q Median     3Q    Max 
+-6.604 -3.952 -2.654  0.989 87.197 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)   20.482      3.365   6.088 2.27e-09 ***
+rm            -2.684      0.532  -5.045 6.35e-07 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 8.401 on 504 degrees of freedom
+Multiple R-squared:  0.04807,   Adjusted R-squared:  0.04618 
+F-statistic: 25.45 on 1 and 504 DF,  p-value: 6.347e-07</code></pre>
+</div>
+</div>
+<p><strong>PLOT:</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">2</span>))</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(model6)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="IE451_HW3_Q3_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p><strong>FOR DIS:</strong></p>
+<p><span class="math inline">\(\begin{equation} \text{Crim} = \text{β1}*\text{dis} + \text{β0} \end{equation}\)</span></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>model7 <span class="ot">&lt;-</span> <span class="fu">lm</span>(crim <span class="sc">~</span> dis, <span class="at">data=</span>dfff)</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model7)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = crim ~ dis, data = dfff)
+
+Residuals:
+   Min     1Q Median     3Q    Max 
+-6.708 -4.134 -1.527  1.516 81.674 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)   9.4993     0.7304  13.006   &lt;2e-16 ***
+dis          -1.5509     0.1683  -9.213   &lt;2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 7.965 on 504 degrees of freedom
+Multiple R-squared:  0.1441,    Adjusted R-squared:  0.1425 
+F-statistic: 84.89 on 1 and 504 DF,  p-value: &lt; 2.2e-16</code></pre>
+</div>
+</div>
+<p><strong>PLOT:</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">2</span>))</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(model7)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="IE451_HW3_Q3_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p><strong>FOR RAD:</strong></p>
+<p><span class="math inline">\(\begin{equation} \text{Crim} = \text{β1}*\text{rad} + \text{β0} \end{equation}\)</span></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>model8 <span class="ot">&lt;-</span> <span class="fu">lm</span>(crim <span class="sc">~</span> dis, <span class="at">data=</span>dfff)</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model8)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = crim ~ dis, data = dfff)
+
+Residuals:
+   Min     1Q Median     3Q    Max 
+-6.708 -4.134 -1.527  1.516 81.674 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)   9.4993     0.7304  13.006   &lt;2e-16 ***
+dis          -1.5509     0.1683  -9.213   &lt;2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 7.965 on 504 degrees of freedom
+Multiple R-squared:  0.1441,    Adjusted R-squared:  0.1425 
+F-statistic: 84.89 on 1 and 504 DF,  p-value: &lt; 2.2e-16</code></pre>
+</div>
+</div>
+<p><strong>PLOT:</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">2</span>))</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(model8)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="IE451_HW3_Q3_files/figure-html/unnamed-chunk-18-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p><strong>FOR TAX:</strong></p>
+<p><span class="math inline">\(\begin{equation} \text{Crim} = \text{β1}*\text{tax} + \text{β0} \end{equation}\)</span></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>model9 <span class="ot">&lt;-</span> <span class="fu">lm</span>(crim <span class="sc">~</span> dis, <span class="at">data=</span>dfff)</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model9)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = crim ~ dis, data = dfff)
+
+Residuals:
+   Min     1Q Median     3Q    Max 
+-6.708 -4.134 -1.527  1.516 81.674 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)   9.4993     0.7304  13.006   &lt;2e-16 ***
+dis          -1.5509     0.1683  -9.213   &lt;2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 7.965 on 504 degrees of freedom
+Multiple R-squared:  0.1441,    Adjusted R-squared:  0.1425 
+F-statistic: 84.89 on 1 and 504 DF,  p-value: &lt; 2.2e-16</code></pre>
+</div>
+</div>
+<p><strong>PLOT:</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">2</span>))</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(model9)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="IE451_HW3_Q3_files/figure-html/unnamed-chunk-20-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p><strong>FOR PTRATIO:</strong></p>
+<p><span class="math inline">\(\begin{equation} \text{Crim} = \text{β1}*\text{ptratio} + \text{β0} \end{equation}\)</span></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>model10 <span class="ot">&lt;-</span> <span class="fu">lm</span>(crim <span class="sc">~</span> ptratio, <span class="at">data=</span>dfff)</span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model10)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = crim ~ ptratio, data = dfff)
+
+Residuals:
+   Min     1Q Median     3Q    Max 
+-7.654 -3.985 -1.912  1.825 83.353 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept) -17.6469     3.1473  -5.607 3.40e-08 ***
+ptratio       1.1520     0.1694   6.801 2.94e-11 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 8.24 on 504 degrees of freedom
+Multiple R-squared:  0.08407,   Adjusted R-squared:  0.08225 
+F-statistic: 46.26 on 1 and 504 DF,  p-value: 2.943e-11</code></pre>
+</div>
+</div>
+<p><strong>PLOT:</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">2</span>))</span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(model10)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="IE451_HW3_Q3_files/figure-html/unnamed-chunk-22-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p><strong>FOR LSTAT:</strong></p>
+<p><span class="math inline">\(\begin{equation} \text{Crim} = \text{β1}*\text{lstat} + \text{β0} \end{equation}\)</span></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>model11 <span class="ot">&lt;-</span> <span class="fu">lm</span>(crim <span class="sc">~</span> lstat, <span class="at">data=</span>dfff)</span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model11)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = crim ~ lstat, data = dfff)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-13.925  -2.822  -0.664   1.079  82.862 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept) -3.33054    0.69376  -4.801 2.09e-06 ***
+lstat        0.54880    0.04776  11.491  &lt; 2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 7.664 on 504 degrees of freedom
+Multiple R-squared:  0.2076,    Adjusted R-squared:  0.206 
+F-statistic:   132 on 1 and 504 DF,  p-value: &lt; 2.2e-16</code></pre>
+</div>
+</div>
+<p><strong>PLOT:</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">2</span>))</span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(model11)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="IE451_HW3_Q3_files/figure-html/unnamed-chunk-24-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p><strong>FOR MEDV:</strong></p>
+<p><span class="math inline">\(\begin{equation} \text{Crim} = \text{β1}*\text{medv} + \text{β0} \end{equation}\)</span></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>model12 <span class="ot">&lt;-</span> <span class="fu">lm</span>(crim <span class="sc">~</span> medv, <span class="at">data=</span>dfff)</span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model12)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = crim ~ medv, data = dfff)
+
+Residuals:
+   Min     1Q Median     3Q    Max 
+-9.071 -4.022 -2.343  1.298 80.957 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept) 11.79654    0.93419   12.63   &lt;2e-16 ***
+medv        -0.36316    0.03839   -9.46   &lt;2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 7.934 on 504 degrees of freedom
+Multiple R-squared:  0.1508,    Adjusted R-squared:  0.1491 
+F-statistic: 89.49 on 1 and 504 DF,  p-value: &lt; 2.2e-16</code></pre>
+</div>
+</div>
+<p><strong>PLOT:</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">2</span>))</span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(model12)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="IE451_HW3_Q3_files/figure-html/unnamed-chunk-26-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<ul>
+<li><strong>RESULT:</strong> Except chas, all remaining variables are statistically significant if we build our linear regression model with only one predictor. Chas are not statistically significant since it’s p value is more than 0.05.</li>
+</ul>
+<p><strong>b) Fit a multiple regression model to predict the response using all of the predictors. Describe your results. For which predictors can we reject the null hypothesis H0 : βj = 0?</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>model_all <span class="ot">=</span> <span class="fu">lm</span>(crim <span class="sc">~</span> ., <span class="at">data=</span>dfff)</span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model_all)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = crim ~ ., data = dfff)
+
+Residuals:
+   Min     1Q Median     3Q    Max 
+-8.534 -2.248 -0.348  1.087 73.923 
+
+Coefficients:
+              Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept) 13.7783938  7.0818258   1.946 0.052271 .  
+zn           0.0457100  0.0187903   2.433 0.015344 *  
+indus       -0.0583501  0.0836351  -0.698 0.485709    
+chas        -0.8253776  1.1833963  -0.697 0.485841    
+nox         -9.9575865  5.2898242  -1.882 0.060370 .  
+rm           0.6289107  0.6070924   1.036 0.300738    
+age         -0.0008483  0.0179482  -0.047 0.962323    
+dis         -1.0122467  0.2824676  -3.584 0.000373 ***
+rad          0.6124653  0.0875358   6.997 8.59e-12 ***
+tax         -0.0037756  0.0051723  -0.730 0.465757    
+ptratio     -0.3040728  0.1863598  -1.632 0.103393    
+lstat        0.1388006  0.0757213   1.833 0.067398 .  
+medv        -0.2200564  0.0598240  -3.678 0.000261 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 6.46 on 493 degrees of freedom
+Multiple R-squared:  0.4493,    Adjusted R-squared:  0.4359 
+F-statistic: 33.52 on 12 and 493 DF,  p-value: &lt; 2.2e-16</code></pre>
+</div>
+</div>
+<ul>
+<li>We can reject null hypothesis for zn, dis, rad and medv since their p values are less than 0.05.</li>
+</ul>
+<p><strong>c) How do your results from (a) compare to your results from (b)? Create a plot displaying the univariate regression coefficients from (a) on the x-axis, and the multiple regression coefficients from (b) on the y-axis. That is, each predictor is displayed as a single point in the plot. Its coefficient in a simple linear regression model is shown on the x-axis, and its coefficient estimate in the multiple linear regression model is shown on the y-axis.</strong></p>
+<p><strong>COMPARISON:</strong></p>
+<p>In scenario a), we constructed 12 different models, each using only one variable from the dataset. While this approach may seem straightforward, it can lead to a significant problem: since the models only consider one variable, all predictors appear statistically significant in these models. In other words, the model learns to make decisions based solely on the single variable it has been given, which can lead to incomplete and biased results.</p>
+<p>On the other hand, in scenario b), we built a model using all the predictors in the dataset. This approach allows us to see the weight of each predictor in the model, as the model considers all the variables together to make decisions. By using multiple predictors, the model can make more informed and accurate predictions, and we can see which predictors are more or less important to the model’s overall performance. Additionally, by using multiple predictors, we can identify any statistically insignificant predictors that do not contribute meaningfully to the model’s performance. This helps us to build a more robust and accurate model that better captures the underlying patterns and relationships in the data.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">=</span> <span class="fu">c</span>(<span class="fu">coefficients</span>(model1)[<span class="dv">2</span>],</span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>      <span class="fu">coefficients</span>(model2)[<span class="dv">2</span>],</span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>      <span class="fu">coefficients</span>(model3)[<span class="dv">2</span>],</span>
+<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a>      <span class="fu">coefficients</span>(model4)[<span class="dv">2</span>],</span>
+<span id="cb44-5"><a href="#cb44-5" aria-hidden="true" tabindex="-1"></a>      <span class="fu">coefficients</span>(model5)[<span class="dv">2</span>],</span>
+<span id="cb44-6"><a href="#cb44-6" aria-hidden="true" tabindex="-1"></a>      <span class="fu">coefficients</span>(model6)[<span class="dv">2</span>],</span>
+<span id="cb44-7"><a href="#cb44-7" aria-hidden="true" tabindex="-1"></a>      <span class="fu">coefficients</span>(model7)[<span class="dv">2</span>],</span>
+<span id="cb44-8"><a href="#cb44-8" aria-hidden="true" tabindex="-1"></a>      <span class="fu">coefficients</span>(model8)[<span class="dv">2</span>],</span>
+<span id="cb44-9"><a href="#cb44-9" aria-hidden="true" tabindex="-1"></a>      <span class="fu">coefficients</span>(model9)[<span class="dv">2</span>],</span>
+<span id="cb44-10"><a href="#cb44-10" aria-hidden="true" tabindex="-1"></a>      <span class="fu">coefficients</span>(model10)[<span class="dv">2</span>],</span>
+<span id="cb44-11"><a href="#cb44-11" aria-hidden="true" tabindex="-1"></a>      <span class="fu">coefficients</span>(model11)[<span class="dv">2</span>],</span>
+<span id="cb44-12"><a href="#cb44-12" aria-hidden="true" tabindex="-1"></a>      <span class="fu">coefficients</span>(model12)[<span class="dv">2</span>])</span>
+<span id="cb44-13"><a href="#cb44-13" aria-hidden="true" tabindex="-1"></a>y <span class="ot">=</span> <span class="fu">coefficients</span>(model_all)[<span class="dv">2</span><span class="sc">:</span><span class="dv">13</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>         zn       indus        chas         nox          rm          rm 
+-0.07393498  0.50977633 -1.89277655 31.24853120 -2.68405122 -2.68405122 
+        dis         dis         dis     ptratio       lstat        medv 
+-1.55090168 -1.55090168 -1.55090168  1.15198279  0.54880478 -0.36315992 </code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>y</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>           zn         indus          chas           nox            rm 
+ 0.0457100386 -0.0583501107 -0.8253775522 -9.9575865471  0.6289106622 
+          age           dis           rad           tax       ptratio 
+-0.0008482791 -1.0122467382  0.6124653115 -0.0037756465 -0.3040727572 
+        lstat          medv 
+ 0.1388005968 -0.2200563590 </code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>)) <span class="co"># 1 plot</span></span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x, y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="IE451_HW3_Q3_files/figure-html/unnamed-chunk-31-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p><strong>d) Is there evidence of non-linear association between any of the predictors and the response? To answer this question, for each predictor X, fit a model of the form</strong></p>
+<p><span class="math inline">\(\begin{equation} Y = \beta_0 + \beta_1X + \beta_2X^2 + \beta_3X^3 + \varepsilon \end{equation}\)</span></p>
+<p><strong>FOR ZN:</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>lm.poly.zn <span class="ot">=</span> <span class="fu">lm</span>(crim <span class="sc">~</span> zn <span class="sc">+</span> <span class="fu">I</span>(zn<span class="sc">^</span><span class="dv">2</span>) <span class="sc">+</span> <span class="fu">I</span>(zn<span class="sc">^</span><span class="dv">3</span>), <span class="at">data =</span> dfff)</span>
+<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(lm.poly.zn)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = crim ~ zn + I(zn^2) + I(zn^3), data = dfff)
+
+Residuals:
+   Min     1Q Median     3Q    Max 
+-4.821 -4.614 -1.294  0.473 84.130 
+
+Coefficients:
+              Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)  4.846e+00  4.330e-01  11.192  &lt; 2e-16 ***
+zn          -3.322e-01  1.098e-01  -3.025  0.00261 ** 
+I(zn^2)      6.483e-03  3.861e-03   1.679  0.09375 .  
+I(zn^3)     -3.776e-05  3.139e-05  -1.203  0.22954    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 8.372 on 502 degrees of freedom
+Multiple R-squared:  0.05824,   Adjusted R-squared:  0.05261 
+F-statistic: 10.35 on 3 and 502 DF,  p-value: 1.281e-06</code></pre>
+</div>
+</div>
+<p>Zn does not have a non-linear association with crim, according to the p-values.</p>
+<p><strong>FOR INDUS:</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>lm.poly.indus <span class="ot">=</span> <span class="fu">lm</span>(crim <span class="sc">~</span> indus <span class="sc">+</span> <span class="fu">I</span>(indus<span class="sc">^</span><span class="dv">2</span>) <span class="sc">+</span> <span class="fu">I</span>(indus<span class="sc">^</span><span class="dv">3</span>), <span class="at">data =</span> dfff)</span>
+<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(lm.poly.indus)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = crim ~ indus + I(indus^2) + I(indus^3), data = dfff)
+
+Residuals:
+   Min     1Q Median     3Q    Max 
+-8.278 -2.514  0.054  0.764 79.713 
+
+Coefficients:
+              Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)  3.6625683  1.5739833   2.327   0.0204 *  
+indus       -1.9652129  0.4819901  -4.077 5.30e-05 ***
+I(indus^2)   0.2519373  0.0393221   6.407 3.42e-10 ***
+I(indus^3)  -0.0069760  0.0009567  -7.292 1.20e-12 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 7.423 on 502 degrees of freedom
+Multiple R-squared:  0.2597,    Adjusted R-squared:  0.2552 
+F-statistic: 58.69 on 3 and 502 DF,  p-value: &lt; 2.2e-16</code></pre>
+</div>
+</div>
+<p>Indus shows that it has a non-linear association with crim based on the p-values.</p>
+<p><strong>FOR CHAS:</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a>lm.poly.chas <span class="ot">=</span> <span class="fu">lm</span>(crim <span class="sc">~</span> chas <span class="sc">+</span> <span class="fu">I</span>(chas<span class="sc">^</span><span class="dv">2</span>) <span class="sc">+</span> <span class="fu">I</span>(chas<span class="sc">^</span><span class="dv">3</span>), <span class="at">data =</span> dfff)</span>
+<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(lm.poly.chas)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = crim ~ chas + I(chas^2) + I(chas^3), data = dfff)
+
+Residuals:
+   Min     1Q Median     3Q    Max 
+-3.738 -3.661 -3.435  0.018 85.232 
+
+Coefficients: (2 not defined because of singularities)
+            Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)   3.7444     0.3961   9.453   &lt;2e-16 ***
+chas         -1.8928     1.5061  -1.257    0.209    
+I(chas^2)         NA         NA      NA       NA    
+I(chas^3)         NA         NA      NA       NA    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 8.597 on 504 degrees of freedom
+Multiple R-squared:  0.003124,  Adjusted R-squared:  0.001146 
+F-statistic: 1.579 on 1 and 504 DF,  p-value: 0.2094</code></pre>
+</div>
+</div>
+<p>Since chas is a factor, squaring it does not affect it.</p>
+<p><strong>FOR NOX:</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a>lm.poly.nox <span class="ot">=</span> <span class="fu">lm</span>(crim <span class="sc">~</span> nox <span class="sc">+</span> <span class="fu">I</span>(nox<span class="sc">^</span><span class="dv">2</span>) <span class="sc">+</span> <span class="fu">I</span>(nox<span class="sc">^</span><span class="dv">3</span>), <span class="at">data =</span> dfff)</span>
+<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(lm.poly.nox)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = crim ~ nox + I(nox^2) + I(nox^3), data = dfff)
+
+Residuals:
+   Min     1Q Median     3Q    Max 
+-9.110 -2.068 -0.255  0.739 78.302 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)   233.09      33.64   6.928 1.31e-11 ***
+nox         -1279.37     170.40  -7.508 2.76e-13 ***
+I(nox^2)     2248.54     279.90   8.033 6.81e-15 ***
+I(nox^3)    -1245.70     149.28  -8.345 6.96e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 7.234 on 502 degrees of freedom
+Multiple R-squared:  0.297, Adjusted R-squared:  0.2928 
+F-statistic: 70.69 on 3 and 502 DF,  p-value: &lt; 2.2e-16</code></pre>
+</div>
+</div>
+<p>Nox shows that it has a non-linear association with crim based on the p-values.</p>
+<p><strong>FOR RM:</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a>lm.poly.rm <span class="ot">=</span> <span class="fu">lm</span>(crim <span class="sc">~</span> rm <span class="sc">+</span> <span class="fu">I</span>(rm<span class="sc">^</span><span class="dv">2</span>) <span class="sc">+</span> <span class="fu">I</span>(rm<span class="sc">^</span><span class="dv">3</span>), <span class="at">data =</span> dfff)</span>
+<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(lm.poly.rm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = crim ~ rm + I(rm^2) + I(rm^3), data = dfff)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-18.485  -3.468  -2.221  -0.015  87.219 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)  
+(Intercept) 112.6246    64.5172   1.746   0.0815 .
+rm          -39.1501    31.3115  -1.250   0.2118  
+I(rm^2)       4.5509     5.0099   0.908   0.3641  
+I(rm^3)      -0.1745     0.2637  -0.662   0.5086  
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 8.33 on 502 degrees of freedom
+Multiple R-squared:  0.06779,   Adjusted R-squared:  0.06222 
+F-statistic: 12.17 on 3 and 502 DF,  p-value: 1.067e-07</code></pre>
+</div>
+</div>
+<p>Rm does not show that it has a non-linear association with crim based on the p-values.</p>
+<p><strong>FOR AGE:</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a>lm.poly.age <span class="ot">=</span> <span class="fu">lm</span>(crim <span class="sc">~</span> age <span class="sc">+</span> <span class="fu">I</span>(age<span class="sc">^</span><span class="dv">2</span>) <span class="sc">+</span> <span class="fu">I</span>(age<span class="sc">^</span><span class="dv">3</span>), <span class="at">data =</span> dfff)</span>
+<span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(lm.poly.age)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = crim ~ age + I(age^2) + I(age^3), data = dfff)
+
+Residuals:
+   Min     1Q Median     3Q    Max 
+-9.762 -2.673 -0.516  0.019 82.842 
+
+Coefficients:
+              Estimate Std. Error t value Pr(&gt;|t|)   
+(Intercept) -2.549e+00  2.769e+00  -0.920  0.35780   
+age          2.737e-01  1.864e-01   1.468  0.14266   
+I(age^2)    -7.230e-03  3.637e-03  -1.988  0.04738 * 
+I(age^3)     5.745e-05  2.109e-05   2.724  0.00668 **
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 7.84 on 502 degrees of freedom
+Multiple R-squared:  0.1742,    Adjusted R-squared:  0.1693 
+F-statistic: 35.31 on 3 and 502 DF,  p-value: &lt; 2.2e-16</code></pre>
+</div>
+</div>
+<p>Age shows that it has a non-linear association with crim based on the p-values.</p>
+<p><strong>FOR DIS:</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a>lm.poly.dis <span class="ot">=</span> <span class="fu">lm</span>(crim <span class="sc">~</span> dis <span class="sc">+</span> <span class="fu">I</span>(dis<span class="sc">^</span><span class="dv">2</span>) <span class="sc">+</span> <span class="fu">I</span>(dis<span class="sc">^</span><span class="dv">3</span>), <span class="at">data =</span> dfff)</span>
+<span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(lm.poly.dis)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = crim ~ dis + I(dis^2) + I(dis^3), data = dfff)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-10.757  -2.588   0.031   1.267  76.378 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)  30.0476     2.4459  12.285  &lt; 2e-16 ***
+dis         -15.5543     1.7360  -8.960  &lt; 2e-16 ***
+I(dis^2)      2.4521     0.3464   7.078 4.94e-12 ***
+I(dis^3)     -0.1186     0.0204  -5.814 1.09e-08 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 7.331 on 502 degrees of freedom
+Multiple R-squared:  0.2778,    Adjusted R-squared:  0.2735 
+F-statistic: 64.37 on 3 and 502 DF,  p-value: &lt; 2.2e-16</code></pre>
+</div>
+</div>
+<p>Dis shows that it has a non-linear association with crim based on the p-values.</p>
+<p><strong>FOR RAD:</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a>lm.poly.rad <span class="ot">=</span> <span class="fu">lm</span>(crim <span class="sc">~</span> rad <span class="sc">+</span> <span class="fu">I</span>(rad<span class="sc">^</span><span class="dv">2</span>) <span class="sc">+</span> <span class="fu">I</span>(rad<span class="sc">^</span><span class="dv">3</span>), <span class="at">data =</span> dfff)</span>
+<span id="cb64-2"><a href="#cb64-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(lm.poly.rad)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = crim ~ rad + I(rad^2) + I(rad^3), data = dfff)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-10.381  -0.412  -0.269   0.179  76.217 
+
+Coefficients:
+             Estimate Std. Error t value Pr(&gt;|t|)
+(Intercept) -0.605545   2.050108  -0.295    0.768
+rad          0.512736   1.043597   0.491    0.623
+I(rad^2)    -0.075177   0.148543  -0.506    0.613
+I(rad^3)     0.003209   0.004564   0.703    0.482
+
+Residual standard error: 6.682 on 502 degrees of freedom
+Multiple R-squared:    0.4, Adjusted R-squared:  0.3965 
+F-statistic: 111.6 on 3 and 502 DF,  p-value: &lt; 2.2e-16</code></pre>
+</div>
+</div>
+<p>Rad does not show that it has a non-linear association with crim based on the p-values.</p>
+<p><strong>FOR TAX:</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a>lm.poly.tax <span class="ot">=</span> <span class="fu">lm</span>(crim <span class="sc">~</span> tax <span class="sc">+</span> <span class="fu">I</span>(tax<span class="sc">^</span><span class="dv">2</span>) <span class="sc">+</span> <span class="fu">I</span>(tax<span class="sc">^</span><span class="dv">3</span>), <span class="at">data =</span> dfff)</span>
+<span id="cb66-2"><a href="#cb66-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(lm.poly.tax)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = crim ~ tax + I(tax^2) + I(tax^3), data = dfff)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-13.273  -1.389   0.046   0.536  76.950 
+
+Coefficients:
+              Estimate Std. Error t value Pr(&gt;|t|)
+(Intercept)  1.918e+01  1.180e+01   1.626    0.105
+tax         -1.533e-01  9.568e-02  -1.602    0.110
+I(tax^2)     3.608e-04  2.425e-04   1.488    0.137
+I(tax^3)    -2.204e-07  1.889e-07  -1.167    0.244
+
+Residual standard error: 6.854 on 502 degrees of freedom
+Multiple R-squared:  0.3689,    Adjusted R-squared:  0.3651 
+F-statistic:  97.8 on 3 and 502 DF,  p-value: &lt; 2.2e-16</code></pre>
+</div>
+</div>
+<p>Tax does not show that it has a non-linear association with crim based on the p-values.</p>
+<p><strong>FOR PTRATIO:</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a>lm.poly.ptratio <span class="ot">=</span> <span class="fu">lm</span>(crim <span class="sc">~</span> ptratio <span class="sc">+</span> <span class="fu">I</span>(ptratio<span class="sc">^</span><span class="dv">2</span>) <span class="sc">+</span> <span class="fu">I</span>(ptratio<span class="sc">^</span><span class="dv">3</span>), <span class="at">data =</span> dfff)</span>
+<span id="cb68-2"><a href="#cb68-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(lm.poly.ptratio)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = crim ~ ptratio + I(ptratio^2) + I(ptratio^3), data = dfff)
+
+Residuals:
+   Min     1Q Median     3Q    Max 
+-6.833 -4.146 -1.655  1.408 82.697 
+
+Coefficients:
+              Estimate Std. Error t value Pr(&gt;|t|)   
+(Intercept)  477.18405  156.79498   3.043  0.00246 **
+ptratio      -82.36054   27.64394  -2.979  0.00303 **
+I(ptratio^2)   4.63535    1.60832   2.882  0.00412 **
+I(ptratio^3)  -0.08476    0.03090  -2.743  0.00630 **
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 8.122 on 502 degrees of freedom
+Multiple R-squared:  0.1138,    Adjusted R-squared:  0.1085 
+F-statistic: 21.48 on 3 and 502 DF,  p-value: 4.171e-13</code></pre>
+</div>
+</div>
+<p>Ptratio shows that it has a non-linear association with crim based on the p-values.</p>
+<p><strong>FOR MEDV:</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb70"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a>lm.poly.medv <span class="ot">=</span> <span class="fu">lm</span>(crim <span class="sc">~</span> medv <span class="sc">+</span> <span class="fu">I</span>(medv<span class="sc">^</span><span class="dv">2</span>) <span class="sc">+</span> <span class="fu">I</span>(medv<span class="sc">^</span><span class="dv">3</span>), <span class="at">data =</span> dfff)</span>
+<span id="cb70-2"><a href="#cb70-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(lm.poly.medv)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = crim ~ medv + I(medv^2) + I(medv^3), data = dfff)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-24.427  -1.976  -0.437   0.439  73.655 
+
+Coefficients:
+              Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept) 53.1655381  3.3563105  15.840  &lt; 2e-16 ***
+medv        -5.0948305  0.4338321 -11.744  &lt; 2e-16 ***
+I(medv^2)    0.1554965  0.0171904   9.046  &lt; 2e-16 ***
+I(medv^3)   -0.0014901  0.0002038  -7.312 1.05e-12 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 6.569 on 502 degrees of freedom
+Multiple R-squared:  0.4202,    Adjusted R-squared:  0.4167 
+F-statistic: 121.3 on 3 and 502 DF,  p-value: &lt; 2.2e-16</code></pre>
+</div>
+</div>
+<p>Medv shows that it has a non-linear association with crim based on the p-values.</p>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
