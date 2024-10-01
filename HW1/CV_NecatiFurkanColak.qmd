@@ -1,0 +1,49 @@
+---
+title: "Necati Furkan Çolak"
+format: html
+date: "15 02 2023"
+editor: visual
+output: html_document
+---
+
+### Contact Information:
+
+School_mail: furkan.colak\@ug.bilkent.edu.tr Mail: necatifurkancolak\@icloud.com
+
+### Education:
+
+-   **2018 - 2024:** Bilkent University, B.S. in Industrial Engineering (Degree expected in January 2024)
+
+### Experience:
+
+-   **Aug 2022 - Present:** Yapı Kredi, Credit Risk Modelling Department, Intern, Remote:
+    -   Participated in model development for credit collection
+    -   Controlled and optimized models in Yapi Kredi
+    -   Detected data anomalies by PL/SQL.
+    -   Benchmark applications for model performances.
+    -   Assisted the IT department in implementing models into the system of Yapi Kredi.
+    -   Collaboration with data scientists on solving problems in models.
+-   **Sep - Jan 2022:** Bilkent University, Computer Science Department, Tutor, Ankara:
+    -   Helping students with python questions during lab hours.
+-   **June - July 2022:** Akbank, Marketing Analytics Department, Intern, Istanbul:
+    -   Prepared presentations about the usage of Python in Marketing operations.
+    -   Analyzed data by Python
+    -   Customer segmentation with K- Mean Cluster Algorithm in Python
+    -   Automation of marketing metrics by Python.
+    -   Benchmark applications for transaction banking products in Excel.
+    -   Queries in SQL for customer segmentation.
+-   **Aug - Sep 2021:** Krones AG., Marketing and Sales Department, Intern, Istanbul:
+    -   Organization of competitive price lists.
+    -   Prepared presentations about new bottle-filling technologies.
+    -   Conducted market research.
+    -   Calculation of marketing metrics in Excel.
+-   **June - July 2021:** UNSAN, Production Department, Intern, Samsun:
+    -   Optimization of factory output with kaizen methods.
+    -   Logistics Optimization
+    -   Scheduled worker shifts.
+
+### Languages:
+
+-   Turkish, Native
+-   English, Advanced
+-   French, Beginner
